@@ -1,46 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सर्पको खेल - Snake Game (Nepali)</title>
+    <title>monkey jump</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <h1>🐍 सर्पको खेल (Snake Game) 🍎</h1>
-        
-        <div class="controls-panel">
-            <h2>📢 कसरी खेल्ने (Kasari Khelne / How to Play)</h2>
-            <p><strong>⬆️⬇️⬅️➡️</strong> एरो कुञ्जीहरू प्रयोग गरेर सर्पलाई नियन्त्रण गर्नुहोस् (Control the snake with Arrow Keys)।</p>
-            <p>🍎 फल खानुहोस् र लामो हुनुहोस्। पर्खाल वा आफ्नो शरीरमा नठोक्किनुहोस् (Don't hit walls or your own body)।</p>
-            <p>तपाईंको **१०** गल्ती (Mistakes) भएपछि खेल समाप्त हुन्छ।</p>
-            
-            <div class="speed-select">
-                <label for="speed">गति छान्नुहोस् (Speed Select):</label>
-                <select id="speed">
-                    <option value="150">ढिलो (Dhilo / Slow)</option>
-                    <option value="100" selected>मध्यम (Madhyam / Normal)</option>
-                    <option value="50">छिटो (Chhito / Fast)</option>
-                </select>
-            </div>
-            
-            <button id="startButton">▶️ खेल सुरु गर्नुहोस् / पुन: सुरु गर्नुहोस् (Start / Restart Game)</button>
+    <div id="game-container">
+        <h1>🐒 monkey jump 🍌</h1>
+
+        <div id="controls">
+            <p><strong>ゲーム利用方法:</strong></p>
+            <ul>
+                <li>移動: **矢印キー (↑ ↓ ← →)**</li>
+                <li>壁にぶつかるか、自分自身にぶつかるとNGです。</li>
+                <li>NGが10回でゲーム終了です。</li>
+            </ul>
+
+            <label for="speed-select">速度選択:</label>
+            <select id="speed-select">
+                <option value="150">遅い</option>
+                <option value="100" selected>並み</option>
+                <option value="50">速い</option>
+            </select>
+
+            <button id="start-button">ゲームスタート</button>
         </div>
 
-        <div class="stats-panel">
-            <p>स्कोर (Score): <span id="score">0</span></p>
-            <p>गल्ती (Mistakes): <span id="mistakes">0</span> / 10</p>
+        <div id="game-status">
+            <p>スコア: <span id="score">0</span></p>
+            <p>NG回数: <span id="ng-count">0</span> / 10</p>
         </div>
-
-        <canvas id="gameCanvas" width="400" height="400"></canvas>
         
-        <div id="gameOverMessage" class="hidden">
-            <h2>🛑 खेल समाप्त भयो! (Game Over!)</h2>
-            <p id="finalScore"></p>
+        <canvas id="game-board" width="400" height="400"></canvas>
+        
+        <div id="message" class="hidden">
+            <p id="message-text"></p>
         </div>
     </div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
